@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ep2-rodrigo_magaldi" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/ep2-rodrigo_magaldi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/ep2-rodrigo_magaldi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Aluno.cpp" />
+		<Unit filename="Aluno.h" />
+		<Unit filename="Disciplina.cpp" />
+		<Unit filename="Disciplina.h" />
+		<Unit filename="Evento.cpp" />
+		<Unit filename="Evento.h" />
+		<Unit filename="IdInvalido.cpp" />
+		<Unit filename="IdInvalido.h" />
+		<Unit filename="Perfil.cpp" />
+		<Unit filename="Perfil.h" />
+		<Unit filename="PersistenciaDaRede.cpp" />
+		<Unit filename="PersistenciaDaRede.h" />
+		<Unit filename="Pessoa.cpp" />
+		<Unit filename="Pessoa.h" />
+		<Unit filename="Professor.cpp" />
+		<Unit filename="Professor.h" />
+		<Unit filename="Publicacao.cpp" />
+		<Unit filename="Publicacao.h" />
+		<Unit filename="RedeSocial.cpp" />
+		<Unit filename="RedeSocial.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
