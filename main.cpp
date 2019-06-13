@@ -269,9 +269,16 @@ void escolherAcao(RedeSocial* redeSocial, Perfil* perfil) {
 
     int nopcao;
 
+    if (dynamic_cast<Aluno*>(perfil)!= NULL) {
+        Aluno* aluno = dynamic_cast<Aluno*>(perfil);
+        cout << aluno->getId() << " - " << aluno->getNome() << endl;
+        cout << aluno->getNumeroUSP() << endl;
+    }
+
     if (dynamic_cast<Professor*>(perfil)!= NULL) {
         Professor* prof = dynamic_cast<Professor*>(perfil);
-        cout << prof->getNumeroUSP() << " - " << prof->getNome() << endl;
+        cout << prof->getId() << " - " << prof->getNome() << endl;
+        cout << prof->getNumeroUSP() << endl;
         cout << "Departamento: " << prof->getDepartamento() << endl;
     }
 
@@ -471,16 +478,38 @@ void terminar(RedeSocial* redeSocial) {
     //funcao que termina todo o processo. Pode ser chamada
     //apenas quando nao ha usuarios logados
 
+    string salvarARede;
+    cout << "Voce gostaria de salvar a rede? (s/n) ";
+    cin >> salvarARede;
+
+    if (salvarARede == "s") {
+        PersistenciaDaRede* persisNova = new PersistenciaDaRede();
+        persisNova->salvar("rede.txt", redeSocial);
+        cout << "Rede salva." << endl << endl;
+    } else if (salvarARede == "n") {
+        cout << "Rede nao salva." << endl << endl;
+    } else {
+        cout << "Escolha uma opcao valida ('s' ou 'n')" << endl;
+        terminar(redeSocial);
+    }
+
     delete redeSocial;
 }
 
 int main() {
 
     cout << "Bem vindo ao inicializador de Rede Social." << endl << endl;
-    cout << "===== Rede Social iniciada =====" << endl;
+
+    string arquivo;
+    cout << "Arquivo: ";
+    cin >> arquivo;
     cout << endl;
 
-    RedeSocial* redeSocial = new RedeSocial();
+    PersistenciaDaRede* persis = new PersistenciaDaRede();
+    RedeSocial* redeSocial = persis->carregar(arquivo);
+
+    cout << "===== Rede Social iniciada =====" << endl;
+    cout << endl;
 
     escolherOpcao(redeSocial);
 

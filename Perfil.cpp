@@ -39,9 +39,9 @@ Perfil::~Perfil(){
 //void Perfil::setUltimoId(int ultimoId) {
 //    Perfil::ultimoId = ultimoId;
 //}
-
+//
 //int Perfil::getUltimoId() {
-//    return Perfil::id;
+//    return Perfil::ultimoId;
 //}
 
 int Perfil::getId() {

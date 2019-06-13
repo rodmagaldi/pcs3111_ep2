@@ -56,7 +56,7 @@
 1558957312 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\idinvalido.h
 	<stdexcept>
 
-1560358463 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\perfil.cpp
+1560444192 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\perfil.cpp
 	"Perfil.h"
 	"Evento.h"
 	"Mensagem.h"
@@ -66,7 +66,7 @@
 	<algorithm>
 	<stdexcept>
 
-1560359372 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\persistenciadarede.cpp
+1560445273 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\persistenciadarede.cpp
 	"PersistenciaDaRede.h"
 	"Aluno.h"
 	<fstream>
@@ -100,7 +100,7 @@
 	"IdInvalido.h"
 	<stdexcept>
 
-1560360126 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\main.cpp
+1560445152 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\main.cpp
 	"RedeSocial.h"
 	"Perfil.h"
 	"Publicacao.h"

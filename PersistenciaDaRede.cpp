@@ -15,7 +15,7 @@ PersistenciaDaRede::~PersistenciaDaRede() {
 void PersistenciaDaRede::salvar(string arquivo, RedeSocial* r) {
     ofstream arq;
     int nAlunos = 0;
-    arq.open("teste.txt");
+    arq.open(arquivo);
 
     if(arq.fail()) {
         throw new logic_error("Erro ao salvar o arquivo.");
@@ -43,6 +43,15 @@ void PersistenciaDaRede::salvar(string arquivo, RedeSocial* r) {
 RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
     ifstream in;
     in.open(arquivo);
+
+    if(!in.is_open()) {
+        RedeSocial* rede = new RedeSocial();
+        in.close();
+
+        cout << "Arquivo nao encontrado!" << endl << "Inicializando rede vazia..." << endl;
+
+        return rede;
+    }
 
     if(in.fail()) {
         throw new logic_error("Falha no arquivo de entrada.");
