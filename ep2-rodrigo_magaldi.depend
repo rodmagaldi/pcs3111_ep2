@@ -66,9 +66,11 @@
 	<algorithm>
 	<stdexcept>
 
-1560445273 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\persistenciadarede.cpp
+1560452278 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\persistenciadarede.cpp
 	"PersistenciaDaRede.h"
 	"Aluno.h"
+	"Disciplina.h"
+	"Professor.h"
 	<fstream>
 	<sstream>
 
