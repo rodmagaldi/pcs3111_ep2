@@ -29,7 +29,7 @@
 	"Perfil.h"
 	<vector>
 
-1560283906 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\disciplina.cpp
+1560457169 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\disciplina.cpp
 	"Disciplina.h"
 	<string>
 
@@ -66,7 +66,7 @@
 	<algorithm>
 	<stdexcept>
 
-1560452278 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\persistenciadarede.cpp
+1560457612 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\persistenciadarede.cpp
 	"PersistenciaDaRede.h"
 	"Aluno.h"
 	"Disciplina.h"
@@ -102,7 +102,7 @@
 	"IdInvalido.h"
 	<stdexcept>
 
-1560445152 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\main.cpp
+1560457498 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\main.cpp
 	"RedeSocial.h"
 	"Perfil.h"
 	"Publicacao.h"

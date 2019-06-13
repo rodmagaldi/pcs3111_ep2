@@ -18,7 +18,6 @@ RedeSocial::~RedeSocial() {
   for (int i = 0; i < this->perfis->size(); i++) {
         delete this->perfis->at(i);
     }
-  delete[] this->perfis;
 
   cout << "RedeSocial deletada " << endl;
 }

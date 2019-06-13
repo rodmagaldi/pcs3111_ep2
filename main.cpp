@@ -22,7 +22,7 @@ void visualizarPerfis(RedeSocial* redeSocial) {
     //agradavel, dentro dos limites de escopo do projeto
 
     for (int i = 0; i < redeSocial->getPerfis()->size(); i++) {
-        cout << std::to_string(i+1) << ") " << redeSocial->getPerfis()->at(i)->getNome() << endl;
+        cout << redeSocial->getPerfis()->at(i)->getId() << ") " << redeSocial->getPerfis()->at(i)->getNome() << endl;
     }
 }
 

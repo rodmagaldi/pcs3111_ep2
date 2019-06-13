@@ -101,6 +101,9 @@ RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
 
     RedeSocial* rede = new RedeSocial();
 
+    int nUsuarios;
+    in >> nUsuarios;
+
     int nAlunos;
     in >> nAlunos;
 
@@ -115,8 +118,65 @@ RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
         in >> email;
         in >> id;
 
-        Aluno* aluno = new Aluno(numeroUSP, nome, email);
+        Aluno* aluno = new Aluno(id, numeroUSP, nome, email);
         rede->adicionar(aluno);
+    }
+
+    int nProfessores;
+    in >> nProfessores;
+
+    for (int i=0; i<nProfessores; i++) {
+        int numeroUSP;
+        string nome;
+        string email;
+        string departamento;
+        int id;
+
+        in >> numeroUSP;
+        in >> nome;
+        in >> email;
+        in >> departamento;
+        in >> id;
+
+        Professor* prof = new Professor(id, numeroUSP, nome, email, departamento);
+        rede->adicionar(prof);
+    }
+
+    int nDisc;
+    in >> nDisc;
+
+    for (int i=0; i<nDisc; i++) {
+        string nome;
+        int idResp;
+        int idPreReq;
+        int id;
+
+        Perfil* resp;
+        Professor* profResp;
+        Perfil* preReq;
+        Disciplina* DiscPreReq;
+
+        in >> nome;
+        in >> idResp;
+        in >> idPreReq;
+        in >> id;
+
+        for (int j=0; j<rede->getPerfis()->size(); j++) {
+            if (rede->getPerfis()->at(j)->getId() == idResp) {
+                profResp = dynamic_cast<Professor*>(rede->getPerfis()->at(j));
+            }
+        }
+
+        for (int j=0; j<rede->getPerfis()->size(); j++) {
+            if (rede->getPerfis()->at(j)->getId() == idPreReq) {
+                DiscPreReq = dynamic_cast<Disciplina*>(rede->getPerfis()->at(j));
+            } else if (idPreReq == -1) {
+                DiscPreReq = NULL;
+            }
+        }
+
+        Disciplina* disc = new Disciplina(id, nome, profResp, DiscPreReq);
+        rede->adicionar(disc);
     }
 
     in.close();
