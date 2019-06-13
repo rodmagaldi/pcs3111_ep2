@@ -76,6 +76,12 @@ void PersistenciaDaRede::salvar(string arquivo, RedeSocial* r) {
                 }
             }
         }
+
+        for (int i=0; i<r->getPerfis()->size(); i++) {
+            for (int j=0; j<r->getPerfis()->at(i)->getSeguidores()->size(); j++) {
+                arq << r->getPerfis()->at(i)->getId() << " " << r->getPerfis()->at(i)->getSeguidores()->at(j)->getId() << "\r\n";
+            }
+        }
     }
 
     arq.close();
