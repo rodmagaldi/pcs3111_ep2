@@ -56,26 +56,34 @@
 1558957312 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\idinvalido.h
 	<stdexcept>
 
-1560444192 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\perfil.cpp
+1560457498 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\main.cpp
+	"RedeSocial.h"
 	"Perfil.h"
+	"Publicacao.h"
+	"Professor.h"
+	"Disciplina.h"
 	"Evento.h"
-	"Mensagem.h"
+	"Aluno.h"
+	"PersistenciaDaRede.h"
 	<iostream>
 	<string>
-	<list>
-	<algorithm>
-	<stdexcept>
 
-1560457612 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\persistenciadarede.cpp
+1558966011 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\persistenciadarede.h
+	"RedeSocial.h"
+
+1560283825 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\mensagem.cpp
+	"Mensagem.h"
+
+1560283825 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\mensagem.h
+	"Publicacao.h"
+
+1560525246 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\persistenciadarede.cpp
 	"PersistenciaDaRede.h"
 	"Aluno.h"
 	"Disciplina.h"
 	"Professor.h"
 	<fstream>
 	<sstream>
-
-1558966011 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\persistenciadarede.h
-	"RedeSocial.h"
 
 1560281494 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\pessoa.cpp
 	"Pessoa.h"
@@ -88,12 +96,6 @@
 	<iostream>
 	<string>
 
-1560283825 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\mensagem.cpp
-	"Mensagem.h"
-
-1560283825 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\mensagem.h
-	"Publicacao.h"
-
 1560457688 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\redesocial.cpp
 	"RedeSocial.h"
 	"Perfil.h"
@@ -102,15 +104,13 @@
 	"IdInvalido.h"
 	<stdexcept>
 
-1560457498 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\main.cpp
-	"RedeSocial.h"
+1560525255 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\perfil.cpp
 	"Perfil.h"
-	"Publicacao.h"
-	"Professor.h"
-	"Disciplina.h"
 	"Evento.h"
-	"Aluno.h"
-	"PersistenciaDaRede.h"
+	"Mensagem.h"
 	<iostream>
 	<string>
+	<list>
+	<algorithm>
+	<stdexcept>
 

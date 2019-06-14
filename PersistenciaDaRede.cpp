@@ -88,6 +88,17 @@ void PersistenciaDaRede::salvar(string arquivo, RedeSocial* r) {
 }
 
 RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
+
+    ifstream contaLinhas;
+    contaLinhas.open(arquivo);
+    int nLinhas = 0;
+    string linhas;
+    while (getline(contaLinhas, linhas))
+        nLinhas++;
+    contaLinhas.close();
+
+    cout << "abriu e fechou" << endl;
+
     ifstream in;
     in.open(arquivo);
 
@@ -105,10 +116,14 @@ RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
         in.close();
     }
 
+    cout << "abriu de novo" << endl;
+
     RedeSocial* rede = new RedeSocial();
 
     int nUsuarios;
     in >> nUsuarios;
+
+    cout << "agora leu a primeira linha" << endl;
 
     int nAlunos;
     in >> nAlunos;
@@ -184,6 +199,33 @@ RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
         Disciplina* disc = new Disciplina(id, nome, profResp, DiscPreReq);
         rede->adicionar(disc);
     }
+
+    cout << "leu usuarios" << endl;
+    cout << nLinhas << endl;
+
+    while (nLinhas > 4+nUsuarios) {
+        int idSeguido;
+        int idSeguidor;
+
+        in >> idSeguido;
+        in >> idSeguidor;
+
+        cout << idSeguido << " " << idSeguidor << endl;
+
+        for (int i=0; i<rede->getPerfis()->size(); i++) {
+            for (int j=0; j<rede->getPerfis()->size(); j++) {
+                if (rede->getPerfis()->at(i)->getId() == idSeguido && rede->getPerfis()->at(j)->getId() == idSeguidor) {
+                    cout << "Chegou aqui" << endl;
+                    rede->getPerfis()->at(i)->adicionarSeguidor(rede->getPerfis()->at(j));
+                    cout << "Adicionou seguidor" << endl;
+                }
+            }
+        }
+
+        nLinhas--;
+    }
+
+    cout << "leu aqui" << endl;
 
     in.close();
     return rede;

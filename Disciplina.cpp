@@ -16,7 +16,6 @@ Disciplina::Disciplina(string nome, Professor* responsavel): Perfil (nome), resp
 
 Disciplina::Disciplina(int id, string nome, Professor* responsavel, Disciplina* preRequisito): Perfil (nome), responsavel (responsavel), preRequisito (preRequisito) {
     this->id_perfil = id;
-    this->adicionarSeguidor(responsavel);
 }
 
 Disciplina::~Disciplina() {

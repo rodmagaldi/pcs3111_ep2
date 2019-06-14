@@ -53,7 +53,7 @@ string Perfil::getNome() {
 }
 
 void Perfil::adicionarSeguidor(Perfil* seguidor) {
-    //caso seja possivel adicionar seguidores
+//    caso seja possivel adicionar seguidores
     if (!conferirSeguidor(seguidor) && seguidor!=this) {
         this->seguidores->push_back(seguidor);
 
