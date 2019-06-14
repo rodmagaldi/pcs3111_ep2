@@ -1,11 +1,16 @@
-4
-1
-1234 Rodrigo rodrigo 1
-1
-12345678 Levy levy PCS 2
+7
+3
+10274224 RodrigoMagaldi rod.magaldi@usp.br 1
+10379669 GustavoKanto gu_kanto@usp.br 2
+4743674 HenriqueReale hreale@usp.br 6
 2
-pcs3110 2 -1 3
-pcs3111 2 3 4
-2 1
-3 2
-4 2
+12345678 FabioLevy levy@usp.br PCS 3
+87654321 FabioCozman cozman@usp.br PMR 7
+2
+PCS3110 3 -1 4
+PCS3111 3 4 5
+1 6
+1 2
+4 3
+5 3
+6 2

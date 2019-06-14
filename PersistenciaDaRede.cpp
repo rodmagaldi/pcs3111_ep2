@@ -27,24 +27,19 @@ void PersistenciaDaRede::salvar(string arquivo, RedeSocial* r) {
     } else {
         for (int i = 0; i<r->getPerfis()->size(); i++) {
             if (dynamic_cast<Aluno*>(r->getPerfis()->at(i))) {
-                cout << "aluno" << endl;
                 nAlunos++;
             }
             if (dynamic_cast<Professor*>(r->getPerfis()->at(i))) {
-                cout << "prof" << endl;
                 nProfs++;
             }
             if (dynamic_cast<Disciplina*>(r->getPerfis()->at(i))) {
-                cout << "disc" << endl;
                 nDisc++;
             }
         }
 
         arq << r->getPerfis()->size() << "\r\n";
-        cout << "nPerfis" << endl;
 
         arq << nAlunos << "\r\n";
-        cout << "nAlunos" << endl;
 
         for (int i = 0; i<r->getPerfis()->size(); i++) {
             if (dynamic_cast<Aluno*>(r->getPerfis()->at(i))) {
@@ -54,7 +49,6 @@ void PersistenciaDaRede::salvar(string arquivo, RedeSocial* r) {
         }
 
         arq << nProfs << "\r\n";
-        cout << "nProfs" << endl;
 
         for (int i = 0; i<r->getPerfis()->size(); i++) {
             if (dynamic_cast<Professor*>(r->getPerfis()->at(i))) {
@@ -64,11 +58,10 @@ void PersistenciaDaRede::salvar(string arquivo, RedeSocial* r) {
         }
 
         arq << nDisc << "\r\n";
-        cout << "nDisc" << endl;
 
-        for (int i = 0; i<r->getPerfis()->size(); i++) {
-            if (dynamic_cast<Disciplina*>(r->getPerfis()->at(i))) {
-                Disciplina* disc = dynamic_cast<Disciplina*>(r->getPerfis()->at(i));
+        for (int i = 1; i<=r->getPerfis()->size(); i++) {
+            if (dynamic_cast<Disciplina*>(r->getPerfil(i))) {
+                Disciplina* disc = dynamic_cast<Disciplina*>(r->getPerfil(i));
                 if (!disc->getPreRequisito()) {
                     arq << disc->getNome() << " " << disc->getResponsavel()->getId() << " " << -1 << " " << disc->getId() << "\r\n";
                 } else {
@@ -77,9 +70,9 @@ void PersistenciaDaRede::salvar(string arquivo, RedeSocial* r) {
             }
         }
 
-        for (int i=0; i<r->getPerfis()->size(); i++) {
-            for (int j=0; j<r->getPerfis()->at(i)->getSeguidores()->size(); j++) {
-                arq << r->getPerfis()->at(i)->getId() << " " << r->getPerfis()->at(i)->getSeguidores()->at(j)->getId() << "\r\n";
+        for (int i=1; i<=r->getPerfis()->size(); i++) {
+            for (int j=0; j<r->getPerfil(i)->getSeguidores()->size(); j++) {
+                arq << i << " " << r->getPerfil(i)->getSeguidores()->at(j)->getId() << "\r\n";
             }
         }
     }
@@ -97,17 +90,12 @@ RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
         nLinhas++;
     contaLinhas.close();
 
-    cout << "abriu e fechou" << endl;
-
     ifstream in;
     in.open(arquivo);
 
     if(!in.is_open()) {
         RedeSocial* rede = new RedeSocial();
         in.close();
-
-        cout << "Arquivo nao encontrado!" << endl << "Inicializando rede vazia..." << endl;
-
         return rede;
     }
 
@@ -116,14 +104,10 @@ RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
         in.close();
     }
 
-    cout << "abriu de novo" << endl;
-
     RedeSocial* rede = new RedeSocial();
 
     int nUsuarios;
     in >> nUsuarios;
-
-    cout << "agora leu a primeira linha" << endl;
 
     int nAlunos;
     in >> nAlunos;
@@ -200,9 +184,6 @@ RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
         rede->adicionar(disc);
     }
 
-    cout << "leu usuarios" << endl;
-    cout << nLinhas << endl;
-
     while (nLinhas > 4+nUsuarios) {
         int idSeguido;
         int idSeguidor;
@@ -210,14 +191,10 @@ RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
         in >> idSeguido;
         in >> idSeguidor;
 
-        cout << idSeguido << " " << idSeguidor << endl;
-
-        for (int i=0; i<rede->getPerfis()->size(); i++) {
-            for (int j=0; j<rede->getPerfis()->size(); j++) {
-                if (rede->getPerfis()->at(i)->getId() == idSeguido && rede->getPerfis()->at(j)->getId() == idSeguidor) {
-                    cout << "Chegou aqui" << endl;
-                    rede->getPerfis()->at(i)->adicionarSeguidor(rede->getPerfis()->at(j));
-                    cout << "Adicionou seguidor" << endl;
+        for (int i=1; i<=rede->getPerfis()->size(); i++) {
+            for (int j=1; j<=rede->getPerfis()->size(); j++) {
+                if (i == idSeguido && j == idSeguidor) {
+                    rede->getPerfil(i)->adicionarSeguidor(rede->getPerfil(j));
                 }
             }
         }
@@ -225,21 +202,7 @@ RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
         nLinhas--;
     }
 
-    cout << "leu aqui" << endl;
-
     in.close();
     return rede;
 
-//    double temp;
-//
-//    for (int i = 0; i < nAlunos; i++) {
-//        getline(file, linha);
-//        stringstream in(linha);
-//
-//
-//        for (int j = 0; j < quant; j++) {
-//            in >> temp;
-//            matrizArquivo->matriz[i][j] = (double)temp / 255;
-//        }
-//    }
 }

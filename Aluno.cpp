@@ -5,6 +5,7 @@ Aluno::Aluno(int numeroUSP, string nome, string email): Pessoa(numeroUSP, nome, 
 }
 
 Aluno::Aluno(int id, int numeroUSP, string nome, string email): Pessoa(numeroUSP, nome, email) {
+    this->id_perfil = id;
 }
 
 Aluno::~Aluno(){

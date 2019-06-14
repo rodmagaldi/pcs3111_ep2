@@ -160,7 +160,7 @@ void cadastrarDisciplina(RedeSocial* redeSocial) {
     cout << "Responsavel: " << endl;
     visualizarPerfis(redeSocial);
 
-    cout << "Digite o numero ou 0 para cancelar: ";
+    cout << "Digite o id ou 0 para cancelar: ";
     cin >> nresponsavel;
     cout << endl;
 
@@ -210,7 +210,7 @@ void cadastrarDisciplina(RedeSocial* redeSocial) {
 
                     cout << "O Pre-Requisito deve ser uma disciplina!" << endl;
                     cout << endl;
-                    cadastrarDisciplina(redeSocial);
+                    escolherOpcao(redeSocial);
 
                 }
             } else {
@@ -224,7 +224,7 @@ void cadastrarDisciplina(RedeSocial* redeSocial) {
 
             cout << "Somente professores podem ser responsaveis por disciplinas!" << endl;
             cout << endl;
-            cadastrarDisciplina(redeSocial);
+            escolherOpcao(redeSocial);
         }
     } else {
         cout << "Escolha um numero valido." << endl;
@@ -253,8 +253,7 @@ void logar(RedeSocial* redeSocial) {
 
         escolherOpcao(redeSocial);
     } else if (nlogin > 0 && nlogin <= redeSocial->getPerfis()->size()){
-        nlogin--;
-        usuarioLogado = redeSocial->getPerfis()->at(nlogin);
+        usuarioLogado = redeSocial->getPerfil(nlogin);
         escolherAcao(redeSocial, usuarioLogado);
     } else {
         cout << "Escolha uma opcao valida." << endl;
@@ -458,13 +457,12 @@ void seguirPerfil(RedeSocial* redeSocial, Perfil* perfil) {
         escolherAcao(redeSocial, perfil);
 
     } else if (nperfil > 0 && nperfil <= redeSocial->getPerfis()->size()){
-        nperfil--;
-        redeSocial->getPerfis()->at(nperfil)->adicionarSeguidor(perfil);
+        redeSocial->getPerfil(nperfil)->adicionarSeguidor(perfil);
 
-        if (redeSocial->getPerfis()->at(nperfil) == perfil) {
-            cout << "Voce nao pode seguir a si mesmo!" << endl;
-            cout << endl;
-        }
+//        if (redeSocial->getPerfis()->at(nperfil) == perfil) {
+//            cout << "Voce nao pode seguir a si mesmo!" << endl;
+//            cout << endl;
+//        }
 
         escolherAcao(redeSocial, perfil);
     } else {

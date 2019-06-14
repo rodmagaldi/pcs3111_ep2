@@ -56,9 +56,6 @@ public:
   virtual vector<Perfil*>* getSeguidores();
 
   virtual void imprimir(); //fazer como eu quiser
-
-  //????????????
-  //void removerPublicacoes(Perfil* autor);
 };
 
 #endif // PERFIL_H

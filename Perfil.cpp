@@ -15,6 +15,7 @@ using namespace std;
 class Publicacao;
 
 int Perfil::id = 1;
+int Perfil::ultimoId = 0;
 
 Perfil::Perfil(string nome): nome (nome) {
     this->id_perfil = Perfil::id;
@@ -22,6 +23,8 @@ Perfil::Perfil(string nome): nome (nome) {
 }
 
 Perfil::Perfil(int id, string nome) {
+    this->id_perfil = Perfil::id;
+    Perfil::id++;
 }
 
 Perfil::~Perfil(){
@@ -36,13 +39,13 @@ Perfil::~Perfil(){
     cout << "Perfil deletado" << endl;
 };
 
-//void Perfil::setUltimoId(int ultimoId) {
-//    Perfil::ultimoId = ultimoId;
-//}
-//
-//int Perfil::getUltimoId() {
-//    return Perfil::ultimoId;
-//}
+void Perfil::setUltimoId(int ultimoId) {
+    Perfil::ultimoId = ultimoId;
+}
+
+int Perfil::getUltimoId() {
+    return Perfil::ultimoId;
+}
 
 int Perfil::getId() {
     return this->id_perfil;
@@ -147,16 +150,3 @@ bool Perfil::conferirSeguidor(Perfil* seguidorTeorico) {
         return true;
     else return false;
 }
-
-//void Perfil::removerPublicacoes(Perfil* autor) {
-//
-//    list<Publicacao*>::iterator i = publicacoesRecebidas->begin();
-//    while (i!=publicacoesRecebidas->end()) {
-//        if ((*i)->getAutor() == autor) {
-//            i = publicacoesRecebidas->erase(i);
-//        }
-//        else {
-//            i++;
-//        }
-//    }
-//}

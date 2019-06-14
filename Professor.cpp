@@ -8,6 +8,7 @@ Professor::Professor(int numeroUSP, string nome, string email, string departamen
 }
 
 Professor::Professor(int id, int numeroUSP, string nome, string email, string departamento): Pessoa (numeroUSP, nome, email), departamento (departamento) {
+    this->id_perfil = id;
 }
 
 Professor::~Professor() {
