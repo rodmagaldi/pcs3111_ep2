@@ -10,10 +10,6 @@
 #include <iostream>
 #include <string>
 
-#define MAXIMO_PUBLICACOES 20
-#define MAXIMO_SEGUIDORES 2
-
-
 using namespace std;
 
 void visualizarPerfis(RedeSocial* redeSocial) {

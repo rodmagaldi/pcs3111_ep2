@@ -16,7 +16,3 @@ string Pessoa::getEmail() {
 int Pessoa::getNumeroUSP() {
     return this->numeroUSP;
 }
-
-//int Pessoa::getQuantidadeDePublicacoesFeitas() {
-//    return this->quantidadeDePublicacoesFeitas;
-//}

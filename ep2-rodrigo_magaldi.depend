@@ -11,7 +11,7 @@
 	"Perfil.h"
 	<string>
 
-1560547166 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\perfil.h
+1560555477 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\perfil.h
 	<iostream>
 	<string>
 	<list>
@@ -29,15 +29,16 @@
 	"Perfil.h"
 	<vector>
 
-1560525425 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\disciplina.cpp
+1560550222 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\disciplina.cpp
 	"Disciplina.h"
 	<string>
+	<stdexcept>
 
-1560528986 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\disciplina.h
+1560550882 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\disciplina.h
 	"Perfil.h"
 	"Professor.h"
 
-1560281584 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\professor.h
+1560550655 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\professor.h
 	"Pessoa.h"
 	<iostream>
 	<string>
@@ -56,7 +57,7 @@
 1558957312 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\idinvalido.h
 	<stdexcept>
 
-1560543389 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\main.cpp
+1560550222 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\main.cpp
 	"RedeSocial.h"
 	"Perfil.h"
 	"Publicacao.h"
@@ -71,21 +72,23 @@
 1558966011 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\persistenciadarede.h
 	"RedeSocial.h"
 
-1560283825 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\mensagem.cpp
+1560550222 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\mensagem.cpp
 	"Mensagem.h"
+	<stdexcept>
 
 1560283825 c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\mensagem.h
 	"Publicacao.h"
 
-1560545290 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\persistenciadarede.cpp
+1560555477 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\persistenciadarede.cpp
 	"PersistenciaDaRede.h"
 	"Aluno.h"
 	"Disciplina.h"
 	"Professor.h"
+	<stdexcept>
 	<fstream>
 	<sstream>
 
-1560281494 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\pessoa.cpp
+1560555477 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\pessoa.cpp
 	"Pessoa.h"
 
 1560542723 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\professor.cpp
@@ -104,7 +107,7 @@
 	"IdInvalido.h"
 	<stdexcept>
 
-1560547081 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\perfil.cpp
+1560550221 source:c:\users\rodrigo magaldi\desktop\coisas da poli\pcs 3111\ep2\perfil.cpp
 	"Perfil.h"
 	"Evento.h"
 	"Mensagem.h"

@@ -1,4 +1,5 @@
 #include "Mensagem.h"
+#include <stdexcept>
 
 Mensagem::Mensagem(Perfil* autor, string texto): Publicacao(autor, texto) {
 }

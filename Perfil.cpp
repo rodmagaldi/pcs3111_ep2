@@ -8,8 +8,6 @@
 
 #include <stdexcept>
 
-#define MAXIMO_SEGUIDORES 2
-
 using namespace std;
 
 class Publicacao;

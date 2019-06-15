@@ -2,6 +2,7 @@
 #include "Aluno.h"
 #include "Disciplina.h"
 #include "Professor.h"
+#include <stdexcept>
 
 #include <fstream>
 #include <sstream>
@@ -21,10 +22,14 @@ void PersistenciaDaRede::salvar(string arquivo, RedeSocial* r) {
     int nDisc = 0;
     arq.open(arquivo);
 
+    //erro
     if(arq.fail()) {
         throw new logic_error("Erro ao salvar o arquivo.");
 
+    //sucesso
     } else {
+
+        //conta a quantidade de cada tipo de perfil
         for (int i = 0; i<r->getPerfis()->size(); i++) {
             if (dynamic_cast<Aluno*>(r->getPerfis()->at(i))) {
                 nAlunos++;
@@ -37,10 +42,13 @@ void PersistenciaDaRede::salvar(string arquivo, RedeSocial* r) {
             }
         }
 
+        //registra o numero total de perfis
         arq << r->getPerfis()->size() << "\r\n";
 
+        //registra o numero total de alunos
         arq << nAlunos << "\r\n";
 
+        //registra cada aluno
         for (int i = 0; i<r->getPerfis()->size(); i++) {
             if (dynamic_cast<Aluno*>(r->getPerfis()->at(i))) {
                 Aluno* aluno = dynamic_cast<Aluno*>(r->getPerfis()->at(i));
@@ -48,8 +56,10 @@ void PersistenciaDaRede::salvar(string arquivo, RedeSocial* r) {
             }
         }
 
+        //numero total de professores
         arq << nProfs << "\r\n";
 
+        //cada professor
         for (int i = 0; i<r->getPerfis()->size(); i++) {
             if (dynamic_cast<Professor*>(r->getPerfis()->at(i))) {
                 Professor* prof = dynamic_cast<Professor*>(r->getPerfis()->at(i));
@@ -57,8 +67,10 @@ void PersistenciaDaRede::salvar(string arquivo, RedeSocial* r) {
             }
         }
 
+        //numero total de disciplinas
         arq << nDisc << "\r\n";
 
+        //cada disciplina
         for (int i = 1; i<=r->getPerfis()->size(); i++) {
             if (dynamic_cast<Disciplina*>(r->getPerfil(i))) {
                 Disciplina* disc = dynamic_cast<Disciplina*>(r->getPerfil(i));
@@ -70,6 +82,7 @@ void PersistenciaDaRede::salvar(string arquivo, RedeSocial* r) {
             }
         }
 
+        //registra seguidores
         for (int i=1; i<=r->getPerfis()->size(); i++) {
             for (int j=0; j<r->getPerfil(i)->getSeguidores()->size(); j++) {
                 arq << i << " " << r->getPerfil(i)->getSeguidores()->at(j)->getId() << "\r\n";
@@ -82,6 +95,9 @@ void PersistenciaDaRede::salvar(string arquivo, RedeSocial* r) {
 
 RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
 
+    //conta o numero total de linhas do arquivo.
+    //esse numero sera usado no final deste metodo,
+    //para registrar as relacoes de seguidores
     ifstream contaLinhas;
     contaLinhas.open(arquivo);
     int nLinhas = 0;
@@ -90,15 +106,18 @@ RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
         nLinhas++;
     contaLinhas.close();
 
+    //abre novamente o arquivo
     ifstream in;
     in.open(arquivo);
 
+    //se arquivo nao existe
     if(!in.is_open()) {
         RedeSocial* rede = new RedeSocial();
         in.close();
         return rede;
     }
 
+    //se ha erro no arquivo
     if(in.fail()) {
         throw new logic_error("Falha no arquivo de entrada.");
         in.close();
@@ -112,6 +131,7 @@ RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
     int nAlunos;
     in >> nAlunos;
 
+    //cadastra alunos
     for (int i=0; i<nAlunos; i++) {
         int numeroUSP;
         string nome;
@@ -130,6 +150,7 @@ RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
     int nProfessores;
     in >> nProfessores;
 
+    //cadastra professores
     for (int i=0; i<nProfessores; i++) {
         int numeroUSP;
         string nome;
@@ -150,6 +171,7 @@ RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
     int nDisc;
     in >> nDisc;
 
+    //cadastra disciplinas
     for (int i=0; i<nDisc; i++) {
         string nome;
         int idResp;
@@ -184,6 +206,7 @@ RedeSocial* PersistenciaDaRede::carregar(string arquivo) {
         rede->adicionar(disc);
     }
 
+    //cria relacoes entre seguidores
     while (nLinhas > 4+nUsuarios) {
         int idSeguido;
         int idSeguidor;

@@ -8,8 +8,6 @@
 #include "Publicacao.h"
 #include "RedeSocial.h"
 
-#define MAXIMO_SEGUIDORES 2
-
 using namespace std;
 
 class Publicacao;
@@ -55,7 +53,7 @@ public:
 
   virtual vector<Perfil*>* getSeguidores();
 
-  virtual void imprimir(); //fazer como eu quiser
+  virtual void imprimir(); //fazer como eu preferir
 };
 
 #endif // PERFIL_H

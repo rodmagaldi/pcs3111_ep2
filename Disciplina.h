@@ -17,13 +17,13 @@ class Disciplina : public Perfil
         virtual Disciplina* getPreRequisito();
         virtual Professor* getResponsavel();
 
+        void adicionarSeguidor(Perfil* seguidor);
+        void imprimir();
+        void receber(Publicacao* p);
+
     protected:
         Professor* responsavel;
         Disciplina* preRequisito = NULL;
-
-        void imprimir();
-        void receber(Publicacao* p);
-        void adicionarSeguidor(Perfil* seguidor);
 
     private:
 };

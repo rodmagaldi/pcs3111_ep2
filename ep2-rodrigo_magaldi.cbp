@@ -41,6 +41,8 @@
 		<Unit filename="Evento.h" />
 		<Unit filename="IdInvalido.cpp" />
 		<Unit filename="IdInvalido.h" />
+		<Unit filename="Mensagem.cpp" />
+		<Unit filename="Mensagem.h" />
 		<Unit filename="Perfil.cpp" />
 		<Unit filename="Perfil.h" />
 		<Unit filename="PersistenciaDaRede.cpp" />

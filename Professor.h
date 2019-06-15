@@ -15,14 +15,12 @@ class Professor: public Pessoa {
         virtual ~Professor();
         string getDepartamento();
 
-        //??????????????
         void imprimir();
     protected:
         int numeroUSP;
         string nome;
         string email;
         string departamento;
-
     private:
 };
 
